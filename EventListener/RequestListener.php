@@ -42,7 +42,6 @@ class RequestListener
     public function onKernelRequest(GetResponseEvent $event)
     {
         if (HttpKernelInterface::MASTER_REQUEST === $event->getRequestType()) {
-            $cookieValue = null;
             $cookieValue = $event->getRequest()->cookies->get('device');
 
             if (!$cookieValue && $this->deviceDetection instanceof DeviceDetectionInterface) {
