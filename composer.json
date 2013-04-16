@@ -1,7 +1,7 @@
 {
     "name": "raindrop/mobiledetect-bundle",
     "type": "symfony-bundle",
-    "description": "Symfony Raindrop MobileDetectBundle",
+    "description": "Symfony Raindrop Mobile Detect Bundle",
     "keywords": ["mobile", "mobile detect", "mobile detector", "php mobile detect", "detect mobile devices"],
     "homepage": "https://github.com/raindropdevs",
     "license": "MIT",
