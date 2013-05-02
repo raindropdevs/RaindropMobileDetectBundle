@@ -14,22 +14,22 @@
 
     <services>
         <service id="mobile_detection" class="%mobile_detection.class%" public="false" />
-        
-        <service id="raindrop_mobile_detect.active_device" class="%raindrop_mobile_detect.active_device.class%"></service>
-            
+
+        <service id="raindrop_mobile_detect.active_device" class="%raindrop_mobile_detect.active_device.class%">
+        </service>
+
         <service id="raindrop_mobile_detect.device_detection" class="%raindrop_mobile_detect.device_detection.class%">
             <argument type="service" id="mobile_detection" />
         </service>
-        
+
         <service id="raindrop_mobile_detect.request_listener" class="%raindrop_mobile_detect.request_listener.class%">
             <argument type="service" id="raindrop_mobile_detect.active_device" />
             <tag name="kernel.event_listener" event="kernel.request"  method="onKernelRequest" />
-            <tag name="kernel.event_listener" event="kernel.response" method="onKernelResponse" />
-        </service>        
-        
+        </service>
+
         <service id="raindrop_mobile_detect.twig.extension" class="%raindrop_mobile_detect.twig.extension.class%">
             <argument type="service" id="raindrop_mobile_detect.device_detection" />
             <tag name="twig.extension" />
-        </service>        
+        </service>
     </services>
 </container>

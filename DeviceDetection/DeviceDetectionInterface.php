@@ -5,34 +5,34 @@ namespace Raindrop\MobileDetectBundle\DeviceDetection;
 /**
  * DeviceDetectionInterface
  */
-interface DeviceDetectionInterface 
+interface DeviceDetectionInterface
 {
     /**
      * Check if the device in mobile
-     * 
-     * @return boolean 
-     */    
-    function isMobile();
+     *
+     * @return boolean
+     */
+    public function isMobile();
 
     /**
      * Check if the device in tablet
-     * 
-     * @return boolean 
-     */    
-    function isTablet();
+     *
+     * @return boolean
+     */
+    public function isTablet();
 
    /**
     * Check if is a $deviceName
     * @param string $deviceName is[iPhone|BlackBerry|HTC|Nexus|Dell|Motorola|Samsung|Sony|Asus|Palm|Vertu|...]
     *
     * @return boolean
-    */     
-    function is($deviceName);
-    
+    */
+    public function is($deviceName);
+
    /**
     * Return the device type
     *
     * @return string
-    */  
-    function getDevice();
+    */
+    public function getDevice();
 }
