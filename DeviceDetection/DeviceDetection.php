@@ -6,7 +6,7 @@ namespace Raindrop\MobileDetectBundle\DeviceDetection;
  * DeviceDetection
  */
 class DeviceDetection implements DeviceDetectionInterface
-{   
+{
     /**
      * @var \Mobile_Detect  $mobileDetect
      */
@@ -14,8 +14,8 @@ class DeviceDetection implements DeviceDetectionInterface
 
     /**
      * Constructor.
-     * 
-     * @param \Mobile_Detect $mobileDetect 
+     *
+     * @param \Mobile_Detect $mobileDetect
      */
     public function __construct(\Mobile_Detect $mobileDetect)
     {
@@ -40,7 +40,7 @@ class DeviceDetection implements DeviceDetectionInterface
 
     /**
      * {@inheritdoc}
-     */ 
+     */
     public function is($deviceName)
     {
         return $this->mobileDetect->is($deviceName);
@@ -48,7 +48,7 @@ class DeviceDetection implements DeviceDetectionInterface
 
     /**
      * {@inheritdoc}
-     */ 
+     */
     public function getDevice()
     {
         return ($this->isMobile() ? ($this->isTablet() ? 'tablet' : 'phone') : 'desktop');
