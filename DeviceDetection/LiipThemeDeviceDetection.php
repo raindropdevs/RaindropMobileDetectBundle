@@ -20,7 +20,7 @@ class LiipThemeDeviceDetection extends DeviceDetection implements LiipDeviceDete
     protected $userAgent;
 
     /**
-     * @var string $type 
+     * @var string $type
      */
     protected $type;
 
@@ -28,7 +28,7 @@ class LiipThemeDeviceDetection extends DeviceDetection implements LiipDeviceDete
     * Adds ActiveTheme class form LiipThemeBundle
     *
     * @param Liip\ThemeBundle\ActiveTheme $activeTheme
-    */    
+    */
     public function addActiveTheme($activeTheme)
     {
         $this->activeTheme = $activeTheme;
@@ -38,7 +38,7 @@ class LiipThemeDeviceDetection extends DeviceDetection implements LiipDeviceDete
     {
         $this->userAgent = $userAgent;
     }
-    
+
     public function getType()
     {
         if (null === $this->type) {

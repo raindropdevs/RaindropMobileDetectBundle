@@ -25,7 +25,7 @@ class MobileDetectExtension extends Twig_Extension
     {
         $this->deviceDetection = $deviceDetection;
     }
-    
+
     /**
     * Get extension twig function
     * @return array
@@ -37,8 +37,8 @@ class MobileDetectExtension extends Twig_Extension
             'is_tablet' => new \Twig_Function_Method($this, 'isTablet'),
             'is_device' => new \Twig_Function_Method($this, 'isDevice'),
         );
-    }   
-    
+    }
+
     /**
     * Is mobile
     * @return boolean
@@ -55,8 +55,8 @@ class MobileDetectExtension extends Twig_Extension
     public function isTablet()
     {
         return $this->deviceDetection->isTablet();
-    }  
-    
+    }
+
     /**
     * Is device
     * @param string $deviceName is[iPhone|BlackBerry|HTC|Nexus|Dell|Motorola|Samsung|Sony|Asus|Palm|Vertu|...]
@@ -66,8 +66,8 @@ class MobileDetectExtension extends Twig_Extension
     public function isDevice($deviceName)
     {
         return $this->deviceDetection->is($deviceName);
-    }    
-    
+    }
+
     /**
     * Extension name
     * @return string
@@ -75,5 +75,5 @@ class MobileDetectExtension extends Twig_Extension
     public function getName()
     {
         return 'raindrop_mobile_detect.twig.extension';
-    }    
+    }
 }

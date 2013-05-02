@@ -15,7 +15,7 @@ class LiipThemeCompilerPass implements CompilerPassInterface
     public function process(ContainerBuilder $container)
     {
         $requestListener = $container->getDefinition('raindrop_mobile_detect.request_listener');
-        
+
         if (!$container->hasDefinition('liip_theme.theme_request_listener')) {
             $requestListener->addArgument(new Reference('raindrop_mobile_detect.device_detection'));
         } else {

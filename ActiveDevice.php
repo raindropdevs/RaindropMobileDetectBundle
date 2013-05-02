@@ -5,7 +5,7 @@ namespace Raindrop\MobileDetectBundle;
 /**
  * ActiveDevice
  */
-class ActiveDevice 
+class ActiveDevice
 {
     /**
      * @var string
@@ -20,12 +20,12 @@ class ActiveDevice
         if ($name) {
             $this->setName($name);
         }
-    }    
+    }
 
     /**
-     * Get active device name 
+     * Get active device name
      *
-     * @return string|null 
+     * @return string|null
      */
     public function getName()
     {
@@ -33,12 +33,12 @@ class ActiveDevice
     }
 
     /**
-     * Set active device name 
+     * Set active device name
      */
     public function setName($name)
     {
         $this->name = $name;
-        
+
         return $this;
-    }    
+    }
 }
