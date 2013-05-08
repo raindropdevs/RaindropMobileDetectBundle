@@ -27,11 +27,13 @@ class RequestListener
      * Constructor.
      *
      * @param ActiveDevice             $activeDevice
+     * @param array                    $redirectConf
      * @param DeviceDetectionInterface $deviceDetection
      */
-    public function __construct(ActiveDevice $activeDevice, DeviceDetectionInterface $deviceDetection)
+    public function __construct(ActiveDevice $activeDevice, array $redirectConf, DeviceDetectionInterface $deviceDetection)
     {
         $this->activeDevice = $activeDevice;
+        $this->redirectConf = $redirectConf;
         $this->deviceDetection = $deviceDetection;
     }
 
