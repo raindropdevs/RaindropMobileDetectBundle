@@ -24,8 +24,10 @@ class Configuration implements ConfigurationInterface
         $rootNode
             ->children()
                 ->arrayNode('redirect')
+                ->addDefaultsIfNotSet()
                     ->children()
                         ->arrayNode('mobile')
+                            ->addDefaultsIfNotSet()
                             ->isRequired()
                             ->children()
                                 ->booleanNode('is_enabled')->defaultFalse()->end()
