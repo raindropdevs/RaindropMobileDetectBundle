@@ -25,6 +25,6 @@ class RaindropMobileDetectExtension extends Extension
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.xml');
 
-        $container->setParameter('mobile_detect.redirect', $config['redirect']);
+        $container->setParameter('raindrop_mobile_detect.redirect', $config['redirect']);
     }
 }
