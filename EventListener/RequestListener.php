@@ -14,6 +14,16 @@ use Raindrop\MobileDetectBundle\DeviceDetection\DeviceDetectionInterface;
 class RequestListener
 {
     /**
+     * @var ActiveDevice $activeDevice
+     */
+    protected $activeDevice;
+
+    /**
+     * @var array
+     */
+    protected $redirectConf;
+
+    /**
      * @var DeviceDetectionInterface $deviceDetection
      */
     protected $deviceDetection;
