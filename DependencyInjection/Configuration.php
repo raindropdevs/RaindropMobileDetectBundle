@@ -2,6 +2,7 @@
 
 namespace Raindrop\MobileDetectBundle\DependencyInjection;
 
+use Raindrop\MobileDetectBundle\EventListener\RequestListener;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
