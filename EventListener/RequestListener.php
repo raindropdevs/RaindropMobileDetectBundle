@@ -70,15 +70,15 @@ class RequestListener
             if ($cookieValue && $cookieValue !== $this->activeDevice->getName()) {
                 $this->activeDevice->setName($cookieValue);
             }
+        }
 
-            // Redirects to the mobile version
-            if ($this->hasMobileRedirect($request)) {
-                if (($response = $this->getMobileRedirectResponse($request))) {
-                    $event->setResponse($response);
-                }
-
-                return;
+        // Redirects to the mobile version
+        if ($this->hasMobileRedirect($request)) {
+            if (($response = $this->getMobileRedirectResponse($request))) {
+                $event->setResponse($response);
             }
+
+            return;
         }
     }
 
