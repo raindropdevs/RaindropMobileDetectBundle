@@ -5,7 +5,7 @@ namespace Raindrop\MobileDetectBundle\EventListener;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
-
+use Liip\ThemeBundle\ActiveTheme;
 use Raindrop\MobileDetectBundle\ActiveDevice;
 use Raindrop\MobileDetectBundle\DeviceDetection\DeviceDetectionInterface;
 
@@ -18,6 +18,16 @@ class RequestListener
     CONST NO_REDIRECT = 'no_redirect';
     CONST REDIRECT_WITHOUT_PATH = 'redirect_without_path';
     CONST MOBILE = 'mobile';
+
+    /**
+     * @var ActiveDevice $activeDevice
+     */
+    protected $activeDevice;
+
+    /**
+     * @var ActiveTheme $activeTheme
+     */
+    protected $activeTheme;
 
     /**
      * @var ActiveDevice $activeDevice
@@ -44,12 +54,14 @@ class RequestListener
      *
      * @param ActiveDevice             $activeDevice
      * @param array                    $redirectConf
+     * @param ActiveTheme              $activeTheme
      * @param DeviceDetectionInterface $deviceDetection
      */
-    public function __construct(ActiveDevice $activeDevice, array $redirectConf, DeviceDetectionInterface $deviceDetection)
+    public function __construct(ActiveDevice $activeDevice, array $redirectConf, ActiveTheme $activeTheme, DeviceDetectionInterface $deviceDetection)
     {
         $this->activeDevice = $activeDevice;
         $this->redirectConf = $redirectConf;
+        $this->activeTheme = $activeTheme;
         $this->deviceDetection = $deviceDetection;
     }
 
@@ -69,6 +81,15 @@ class RequestListener
 
             if ($cookieValue && $cookieValue !== $this->activeDevice->getName()) {
                 $this->activeDevice->setName($cookieValue);
+            }
+
+            // force liipTheme based on configured host
+            if ($this->redirectConf['mobile']['force_device']) {
+                if ($this->getCurrentHost($request) === $this->redirectConf['mobile']['host']) {
+                    $this->activeTheme->setName($this->redirectConf['mobile']['mobile_theme']);
+                } else {
+                    $this->activeTheme->setName($this->redirectConf['mobile']['desktop_theme']);
+                }
             }
         }
 

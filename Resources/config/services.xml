@@ -25,7 +25,8 @@
         <service id="raindrop_mobile_detect.request_listener" class="%raindrop_mobile_detect.request_listener.class%">
             <argument type="service" id="raindrop_mobile_detect.active_device" />
             <argument>%raindrop_mobile_detect.redirect%</argument>
-            <tag name="kernel.event_listener" event="kernel.request"  method="onKernelRequest" />
+            <argument type="service" id="liip_theme.active_theme" />
+            <tag name="kernel.event_subscriber"></tag>
         </service>
 
         <service id="raindrop_mobile_detect.twig.extension" class="%raindrop_mobile_detect.twig.extension.class%">
