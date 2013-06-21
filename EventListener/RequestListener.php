@@ -5,6 +5,8 @@ namespace Raindrop\MobileDetectBundle\EventListener;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpKernel\KernelEvents;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Liip\ThemeBundle\ActiveTheme;
 use Raindrop\MobileDetectBundle\ActiveDevice;
 use Raindrop\MobileDetectBundle\DeviceDetection\DeviceDetectionInterface;
@@ -12,7 +14,7 @@ use Raindrop\MobileDetectBundle\DeviceDetection\DeviceDetectionInterface;
 /**
  * RequestListener
  */
-class RequestListener
+class RequestListener implements EventSubscriberInterface
 {
     CONST REDIRECT = 'redirect';
     CONST NO_REDIRECT = 'no_redirect';
