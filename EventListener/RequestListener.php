@@ -32,11 +32,6 @@ class RequestListener implements EventSubscriberInterface
     protected $activeTheme;
 
     /**
-     * @var ActiveDevice $activeDevice
-     */
-    protected $activeDevice;
-
-    /**
      * @var array
      */
     protected $redirectConf;
