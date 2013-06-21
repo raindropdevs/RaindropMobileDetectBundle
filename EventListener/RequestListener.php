@@ -155,7 +155,7 @@ class RequestListener implements EventSubscriberInterface
     */
     private function getCurrentHost($request)
     {
-        return $request->getScheme() . '://' . $request->getHost();
+        return $request->getHost();
     }
 
     public static function getSubscribedEvents()
