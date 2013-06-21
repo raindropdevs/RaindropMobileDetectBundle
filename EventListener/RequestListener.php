@@ -160,4 +160,11 @@ class RequestListener
     {
         return $request->getScheme() . '://' . $request->getHost();
     }
+
+    public static function getSubscribedEvents()
+    {
+        return array(
+            KernelEvents::REQUEST => array('onKernelRequest', 0),
+        );
+    }
 }
