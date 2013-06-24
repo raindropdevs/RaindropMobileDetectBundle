@@ -27,7 +27,7 @@ class DeviceDetection implements DeviceDetectionInterface
      */
     public function isMobile()
     {
-        return $this->mobileDetect->isMobile();
+        return ($this->mobileDetect->isMobile() && !$this->mobileDetect->isTablet());
     }
 
     /**
