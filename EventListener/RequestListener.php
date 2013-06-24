@@ -112,7 +112,7 @@ class RequestListener implements EventSubscriberInterface
             return false;
         }
 
-        $isMobile = $this->deviceDetection->isMobile();
+        $isMobile = $this->deviceDetection->isMobile() && !$this->deviceDetection->isTablet();
         $isMobileHost = ($this->getCurrentHost($request) === $this->redirectConf['mobile']['host']);
 
         if ($isMobile && !$isMobileHost) {
