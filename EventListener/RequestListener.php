@@ -144,7 +144,7 @@ class RequestListener implements EventSubscriberInterface
     */
     private function getRedirectUrl($platform, $request)
     {
-        return $request->getScheme() . '://' . $this->redirectConf[$platform]['host'].$request->getRequestUri();
+        return $request->getScheme() . '://' . $this->redirectConf[$platform]['host'] . $request->getRequestUri();
     }
 
    /**
