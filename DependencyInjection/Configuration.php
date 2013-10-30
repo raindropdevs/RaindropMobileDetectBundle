@@ -39,6 +39,12 @@ class Configuration implements ConfigurationInterface
                                 ->scalarNode('action')->defaultValue(RequestListener::REDIRECT)->cannotBeEmpty()->end()
                             ->end()
                         ->end()
+                        ->arrayNode('desktop')
+                            ->addDefaultsIfNotSet()
+                            ->children()
+                                ->scalarNode('host')->defaultNull()->end()
+                            ->end()
+                        ->end()                
                     ->end()
                 ->end()
             ->end();
